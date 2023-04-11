@@ -1,22 +1,22 @@
-package com.kytokvinily.vinyls.entity.keys;
+package com.kytokvinily.vinyls.dto;
 
-import jakarta.persistence.Embeddable;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.io.Serializable;
 
 @Getter
 @Setter
 @AllArgsConstructor
-@NoArgsConstructor
-@Embeddable
-public class VinylId implements Serializable {
+public class VinylDto {
 
+    @NotBlank
     private String title;
+    @Min(1900)
     private int year;
+    @NotBlank
+    private String author;
 }

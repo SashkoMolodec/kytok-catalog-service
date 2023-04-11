@@ -3,6 +3,7 @@ package com.kytokvinily.vinyls.entity;
 import com.kytokvinily.vinyls.entity.keys.VinylId;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
