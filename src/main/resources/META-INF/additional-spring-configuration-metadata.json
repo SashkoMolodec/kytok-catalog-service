@@ -1,0 +1,13 @@
+{
+  "properties": [
+    {
+      "name": "vinyl.message.greeting",
+      "type": "java.lang.String",
+      "description": "A message to welcome users."
+    },
+    {
+      "name": "vinyl.testdata.enabled",
+      "type": "java.lang.String",
+      "description": "Enable test data."
+    }
+  ] }

@@ -1,6 +1,6 @@
 package com.kytokvinily.vinyls.controller.json;
 
-import com.kytokvinily.vinyls.dto.VinylDto;
+import com.kytokvinily.vinyls.web.VinylDto;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.json.JsonTest;
@@ -16,7 +16,10 @@ public class VinylJsonTests {
     @Test
     void testSerialize() throws Exception {
         var vinylDto = new VinylDto("title1", 1989, "author1");
+        vinylDto.setId(1L);
         var jsonContent = json.write(vinylDto);
+        assertThat(jsonContent).extractingJsonPathNumberValue("@.id")
+                .isEqualTo(vinylDto.getId().intValue());
         assertThat(jsonContent).extractingJsonPathStringValue("@.title")
                 .isEqualTo(vinylDto.getTitle());
         assertThat(jsonContent).extractingJsonPathNumberValue("@.year")

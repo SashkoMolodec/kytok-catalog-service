@@ -1,6 +1,6 @@
 package com.kytokvinily.vinyls.validation;
 
-import com.kytokvinily.vinyls.dto.VinylDto;
+import com.kytokvinily.vinyls.web.VinylDto;
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.Validation;
 import jakarta.validation.Validator;
@@ -22,28 +22,28 @@ public class VinylValidationTests {
 
     @Test
     void whenAllFieldsCorrectThenValidationSucceeds() {
-        var vinyl = new VinylDto("title1", 1900, "author1");
+        var vinyl = new VinylDto( "title1", 1900, "author1");
         Set<ConstraintViolation<VinylDto>> violations = validator.validate(vinyl);
         assertThat(violations).isEmpty();
     }
 
     @Test
     void whenAuthorNotDefinedThenValidationFails() {
-        var vinyl = new VinylDto("title1", 1900, null);
+        var vinyl = new VinylDto( "title1", 1900, null);
         Set<ConstraintViolation<VinylDto>> violations = validator.validate(vinyl);
         assertThat(violations).hasSize(1);
     }
 
     @Test
     void whenYearNotMinimalThenValidationFails() {
-        var vinyl = new VinylDto("title1", 1899, "author1");
+        var vinyl = new VinylDto( "title1", 1899, "author1");
         Set<ConstraintViolation<VinylDto>> violations = validator.validate(vinyl);
         assertThat(violations).hasSize(1);
     }
 
     @Test
     void whenTitleNotDefinedThenValidationFails() {
-        var vinyl = new VinylDto(null, 1900, "author1");
+        var vinyl = new VinylDto( null, 1900, "author1");
         Set<ConstraintViolation<VinylDto>> violations = validator.validate(vinyl);
         assertThat(violations).hasSize(1);
     }

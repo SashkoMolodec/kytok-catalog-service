@@ -1,7 +1,7 @@
 package com.kytokvinily.vinyls.controller;
 
-import com.kytokvinily.vinyls.exception.VinylNotFoundException;
-import com.kytokvinily.vinyls.service.VinylService;
+import com.kytokvinily.vinyls.domain.VinylNotFoundException;
+import com.kytokvinily.vinyls.domain.VinylService;
 import com.kytokvinily.vinyls.web.VinylController;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

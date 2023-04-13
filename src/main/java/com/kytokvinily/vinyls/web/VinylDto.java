@@ -1,22 +1,26 @@
-package com.kytokvinily.vinyls.dto;
+package com.kytokvinily.vinyls.web;
 
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
 
 @Getter
 @Setter
-@AllArgsConstructor
 public class VinylDto {
 
+    Long id;
     @NotBlank
     private String title;
     @Min(1900)
     private int year;
     @NotBlank
     private String author;
+
+    public VinylDto(String title, int year, String author) {
+        this.title = title;
+        this.year = year;
+        this.author = author;
+    }
 }

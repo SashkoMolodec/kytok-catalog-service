@@ -11,13 +11,27 @@ spring:
   datasource:
     username: user
     password: password
-    driver-class-name: org.postgresql.Driver
     url: jdbc:postgresql://localhost:5432/vinyls_catalog
     hikari:
       connection-timeout: 2000 #ms
       maximum-pool-size: 5
-  jpa:
-    hibernate:
-      ddl-auto: update
-    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  config:
+    import: "optional:configserver:"
+  cloud:
+    config:
+      uri: http://localhost:8888
+      request-connect-timeout: 5000 # 5s
+      request-read-timeout: 5000 # 5s
+      fail-fast: false # In production, set to true
+      retry:
+        max-attempts: 6
+        initial-interval: 1000 # 1s
+        max-interval: 2000 # 2s
+        multiplier: 1.1
+
+vinyl:
+  message:
+    greeting: "Welcome to our service!"
+  testdata:
+    enabled: false
 

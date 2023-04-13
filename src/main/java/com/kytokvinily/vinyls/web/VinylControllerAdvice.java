@@ -1,7 +1,7 @@
 package com.kytokvinily.vinyls.web;
 
-import com.kytokvinily.vinyls.exception.VinylAlreadyExistsException;
-import com.kytokvinily.vinyls.exception.VinylNotFoundException;
+import com.kytokvinily.vinyls.domain.VinylAlreadyExistsException;
+import com.kytokvinily.vinyls.domain.VinylNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;

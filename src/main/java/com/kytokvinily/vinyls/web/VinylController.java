@@ -1,7 +1,7 @@
 package com.kytokvinily.vinyls.web;
 
-import com.kytokvinily.vinyls.dto.VinylDto;
-import com.kytokvinily.vinyls.service.VinylService;
+import com.kytokvinily.vinyls.config.Messages;
+import com.kytokvinily.vinyls.domain.VinylService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -12,13 +12,16 @@ import org.springframework.web.bind.annotation.*;
 public class VinylController {
 
     private final VinylService vinylService;
+    private final Messages messages;
 
-    public VinylController(VinylService vinylService) {
+    public VinylController(VinylService vinylService, Messages messages) {
         this.vinylService = vinylService;
+        this.messages = messages;
     }
 
     @GetMapping
-    public Iterable<VinylDto> get() {
+    public Iterable<VinylDto> getAll() {
+        System.out.println(messages.getGreeting());
         return vinylService.viewVinyls();
     }
 
@@ -33,15 +36,14 @@ public class VinylController {
         return vinylService.addVinyl(vinylDto);
     }
 
-    @DeleteMapping("{title}/{year}")
+    @DeleteMapping("{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void delete(@PathVariable String title, @PathVariable int year) {
-        vinylService.removeVinyl(title, year);
+    public void delete(@PathVariable Long id) {
+        vinylService.removeVinyl(id);
     }
 
-    @PutMapping("{title}/{year}")
-    public VinylDto put(@PathVariable String title, @PathVariable int year, @Valid @RequestBody VinylDto vinylDto) {
-        return vinylService.editVinylDetails(title, year, vinylDto);
+    @PutMapping("{id}")
+    public VinylDto put(@PathVariable Long id, @Valid @RequestBody VinylDto vinylDto) {
+        return vinylService.editVinylDetails(id, vinylDto);
     }
-
 }
