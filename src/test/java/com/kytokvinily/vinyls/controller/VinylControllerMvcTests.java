@@ -1,5 +1,6 @@
 package com.kytokvinily.vinyls.controller;
 
+import com.kytokvinily.vinyls.config.Messages;
 import com.kytokvinily.vinyls.domain.VinylNotFoundException;
 import com.kytokvinily.vinyls.domain.VinylService;
 import com.kytokvinily.vinyls.web.VinylController;
@@ -22,6 +23,9 @@ public class VinylControllerMvcTests {
 
     @MockBean
     private VinylService vinylService;
+
+    @MockBean
+    private Messages messages;
 
     @Test
     void getNewVinylThenReturn404() throws Exception{
