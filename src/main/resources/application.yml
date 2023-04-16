@@ -8,6 +8,8 @@ server:
       min-spare: 5
 
 spring:
+  application:
+    name: vinyls-service
   datasource:
     username: user
     password: password
@@ -35,3 +37,8 @@ vinyl:
   testdata:
     enabled: false
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
