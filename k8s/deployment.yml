@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vinyls-service
+  labels:
+    app: vinyls-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vinyls-service
+  template:
+    metadata:
+      labels:
+        app: vinyls-service
+    spec:
+      containers:
+        - name: vinyls-service
+          image: vinyls-service
+          imagePullPolicy: IfNotPresent
+          lifecycle:
+            preStop:
+              exec:
+                command: [ "sh", "-c", "sleep 5" ]
+          ports:
+            - containerPort: 9001
+          env:
+            - name: BPL_JVM_THREAD_COUNT
+              value: "50"
+            - name: SPRING_CLOUD_CONFIG_URI
+              value: http://config-service
+            - name: SPRING_DATASOURCE_URL
+              value: jdbc:postgresql://vinyl-postgres/vinyls_catalog
+            - name: SPRING_PROFILES_ACTIVE
+              value: default

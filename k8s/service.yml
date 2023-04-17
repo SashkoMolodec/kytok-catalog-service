@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: vinyls-service
+  labels:
+    app: vinyls-service
+spec:
+  type: ClusterIP
+  selector:
+    app: vinyls-service
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 9001
