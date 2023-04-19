@@ -9,7 +9,7 @@ server:
 
 spring:
   application:
-    name: vinyls-service
+    name: vinyl-service
   datasource:
     username: user
     password: password

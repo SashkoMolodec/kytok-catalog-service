@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: vinyls-service
+  name: vinyl-service
   labels:
-    app: vinyls-service
+    app: vinyl-service
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: vinyls-service
+      app: vinyl-service
   template:
     metadata:
       labels:
-        app: vinyls-service
+        app: vinyl-service
     spec:
       containers:
-        - name: vinyls-service
-          image: vinyls-service
+        - name: vinyl-service
+          image: vinyl-service
           imagePullPolicy: IfNotPresent
           lifecycle:
             preStop:
