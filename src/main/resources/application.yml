@@ -13,7 +13,7 @@ spring:
   datasource:
     username: user
     password: password
-    url: jdbc:postgresql://localhost:5432/vinyls_catalog
+    url: jdbc:postgresql://localhost:5432/vinyldb_catalog
     hikari:
       connection-timeout: 2000 #ms
       maximum-pool-size: 5
