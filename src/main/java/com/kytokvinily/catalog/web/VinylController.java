@@ -1,7 +1,7 @@
-package com.kytokvinily.vinyls.web;
+package com.kytokvinily.catalog.web;
 
-import com.kytokvinily.vinyls.config.Messages;
-import com.kytokvinily.vinyls.domain.VinylService;
+import com.kytokvinily.catalog.config.Messages;
+import com.kytokvinily.catalog.domain.VinylService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;

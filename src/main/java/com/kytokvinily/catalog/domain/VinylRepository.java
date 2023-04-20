@@ -1,6 +1,5 @@
-package com.kytokvinily.vinyls.domain;
+package com.kytokvinily.catalog.domain;
 
-import com.kytokvinily.vinyls.domain.Vinyl;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.transaction.annotation.Transactional;
 

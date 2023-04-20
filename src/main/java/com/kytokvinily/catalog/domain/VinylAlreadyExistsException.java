@@ -1,4 +1,4 @@
-package com.kytokvinily.vinyls.domain;
+package com.kytokvinily.catalog.domain;
 
 public class VinylAlreadyExistsException extends RuntimeException {
 

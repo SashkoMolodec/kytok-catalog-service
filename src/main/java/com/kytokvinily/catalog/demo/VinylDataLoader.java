@@ -1,14 +1,14 @@
-package com.kytokvinily.vinyls.demo;
+package com.kytokvinily.catalog.demo;
 
-import com.kytokvinily.vinyls.domain.Vinyl;
-import com.kytokvinily.vinyls.domain.VinylRepository;
+import com.kytokvinily.catalog.domain.Vinyl;
+import com.kytokvinily.catalog.domain.VinylRepository;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
 
 @Component
-@ConditionalOnProperty(name = "vinyl.testdata.enabled", havingValue = "true")
+@ConditionalOnProperty(name = "kytok.testdata.enabled", havingValue = "true")
 public class VinylDataLoader {
 
     private final VinylRepository vinylRepository;

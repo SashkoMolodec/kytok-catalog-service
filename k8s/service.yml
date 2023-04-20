@@ -1,13 +1,13 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: vinyl-service
+  name: catalog-service
   labels:
-    app: vinyl-service
+    app: catalog-service
 spec:
   type: ClusterIP
   selector:
-    app: vinyl-service
+    app: catalog-service
   ports:
   - protocol: TCP
     port: 80

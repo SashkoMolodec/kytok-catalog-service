@@ -1,4 +1,4 @@
-package com.kytokvinily.vinyls.web;
+package com.kytokvinily.catalog.web;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

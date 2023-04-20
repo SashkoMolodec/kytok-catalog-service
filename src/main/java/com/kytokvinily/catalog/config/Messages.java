@@ -1,8 +1,8 @@
-package com.kytokvinily.vinyls.config;
+package com.kytokvinily.catalog.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
-@ConfigurationProperties(prefix = "vinyl.message")
+@ConfigurationProperties(prefix = "kytok.message")
 public class Messages {
 
     String greeting;

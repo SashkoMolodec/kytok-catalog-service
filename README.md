@@ -12,7 +12,7 @@ Run postgresSQL in deployment/kubernetes/platform/development
 ```shell
 kubectl apply -f services
 ```
-Create Deployment and Service objects for vinyls service
+Create Deployment and Service objects for catalog service
 ```shell
 kubectl apply -f k8s/deployment.yml
 kubectl apply -f k8s/service.yml

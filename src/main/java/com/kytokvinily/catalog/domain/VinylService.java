@@ -1,6 +1,6 @@
-package com.kytokvinily.vinyls.domain;
+package com.kytokvinily.catalog.domain;
 
-import com.kytokvinily.vinyls.web.VinylDto;
+import com.kytokvinily.catalog.web.VinylDto;
 import org.springframework.stereotype.Service;
 
 @Service

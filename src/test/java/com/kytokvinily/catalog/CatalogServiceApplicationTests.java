@@ -1,7 +1,7 @@
 
-package com.kytokvinily.vinyls;
+package com.kytokvinily.catalog;
 
-import com.kytokvinily.vinyls.web.VinylDto;
+import com.kytokvinily.catalog.web.VinylDto;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -15,7 +15,7 @@ import org.springframework.test.web.reactive.server.WebTestClient;
         webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT
 )
 @ActiveProfiles("integration")
-public class VinylsServiceApplicationTests {
+public class CatalogServiceApplicationTests {
 
     @Autowired
     private WebTestClient webTestClient;
