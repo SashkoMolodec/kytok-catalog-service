@@ -30,6 +30,6 @@ spec:
             - name: SPRING_CLOUD_CONFIG_URI
               value: http://config-service
             - name: SPRING_DATASOURCE_URL
-              value: jdbc:postgresql://kytokdb-postgres/vinyldb_catalog
+              value: jdbc:postgresql://kytok-postgres/vinyldb_catalog
             - name: SPRING_PROFILES_ACTIVE
               value: default

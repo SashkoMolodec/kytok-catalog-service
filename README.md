@@ -17,9 +17,17 @@ Create Deployment and Service objects for catalog service
 kubectl apply -f k8s/deployment.yml
 kubectl apply -f k8s/service.yml
 ```
-Expose to outside
+Load image into minikube
+```shell
+minikube image load edge-service --profile kytok
+```
+Expose to outside (single service)
 ```shell
 kubectl port-forward service/catalog-service 9001:80
+```
+Expose to outside the whole cluster (127.0.0.1)
+```shell
+minikube tunnel --profile kytok
 ```
 Stop minikube
 ```shell
