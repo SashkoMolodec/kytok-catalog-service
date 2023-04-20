@@ -50,4 +50,10 @@ public class VinylService {
     public void removeVinyl(Long id) {
         vinylRepository.deleteById(id);
     }
+
+    public VinylDto getById(Long id) {
+        return vinylMapper.toVinylDto(
+                vinylRepository.findById(id)
+                        .orElseThrow(() -> new VinylNotFoundException(id)));
+    }
 }

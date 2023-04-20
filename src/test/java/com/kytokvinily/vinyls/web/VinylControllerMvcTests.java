@@ -1,9 +1,8 @@
-package com.kytokvinily.vinyls.controller;
+package com.kytokvinily.vinyls.web;
 
 import com.kytokvinily.vinyls.config.Messages;
 import com.kytokvinily.vinyls.domain.VinylNotFoundException;
 import com.kytokvinily.vinyls.domain.VinylService;
-import com.kytokvinily.vinyls.web.VinylController;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;

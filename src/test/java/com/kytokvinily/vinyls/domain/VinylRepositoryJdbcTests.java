@@ -1,8 +1,6 @@
-package com.kytokvinily.vinyls.repository;
+package com.kytokvinily.vinyls.domain;
 
 import com.kytokvinily.vinyls.config.DataConfig;
-import com.kytokvinily.vinyls.domain.Vinyl;
-import com.kytokvinily.vinyls.domain.VinylRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.data.jdbc.DataJdbcTest;

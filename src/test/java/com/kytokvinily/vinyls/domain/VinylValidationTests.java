@@ -1,4 +1,4 @@
-package com.kytokvinily.vinyls.validation;
+package com.kytokvinily.vinyls.domain;
 
 import com.kytokvinily.vinyls.web.VinylDto;
 import jakarta.validation.ConstraintViolation;

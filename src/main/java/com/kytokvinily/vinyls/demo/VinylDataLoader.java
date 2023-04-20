@@ -18,7 +18,7 @@ public class VinylDataLoader {
     }
 
     @EventListener(ApplicationReadyEvent.class)
-    public void loadBookTestData() {
+    public void loadVinylTestData() {
         var vin1 = Vinyl.of("title2", "author2", 1989);
         var vin2 = Vinyl.of("title3", "author3", 1990);
         vinylRepository.save(vin1);

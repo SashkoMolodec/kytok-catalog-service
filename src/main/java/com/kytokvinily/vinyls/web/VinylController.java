@@ -36,6 +36,12 @@ public class VinylController {
         return vinylService.addVinyl(vinylDto);
     }
 
+    @GetMapping("{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public VinylDto get(@PathVariable Long id) {
+        return vinylService.getById(id);
+    }
+
     @DeleteMapping("{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void delete(@PathVariable Long id) {

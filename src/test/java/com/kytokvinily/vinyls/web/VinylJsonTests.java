@@ -1,6 +1,5 @@
-package com.kytokvinily.vinyls.controller.json;
+package com.kytokvinily.vinyls.web;
 
-import com.kytokvinily.vinyls.web.VinylDto;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.json.JsonTest;
