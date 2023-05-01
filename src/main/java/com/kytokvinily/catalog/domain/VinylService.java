@@ -36,11 +36,16 @@ public class VinylService {
     public VinylDto editVinylDetails(Long id, VinylDto vinylDto) {
         return vinylRepository.findById(id)
                 .map(existingVinyl -> {
-                    var vinylToUpdate = Vinyl.of(
+                    var vinylToUpdate = new Vinyl(
                             existingVinyl.id(),
                             vinylDto.getTitle(),
                             vinylDto.getAuthor(),
-                            vinylDto.getYear()
+                            vinylDto.getYear(),
+                            existingVinyl.createdDate(),
+                            existingVinyl.lastModifiedDate(),
+                            existingVinyl.createdBy(),
+                            existingVinyl.lastModifiedBy(),
+                            existingVinyl.version()
                     );
                     Vinyl saved = vinylRepository.save(vinylToUpdate);
                     return vinylMapper.toVinylDto(saved);

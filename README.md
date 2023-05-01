@@ -33,3 +33,33 @@ Stop minikube
 ```shell
 minikube stop --profile kytok
 ```
+
+#### Keycloak
+Log in console
+```shell
+./kcadm.sh config credentials --server http://localhost:8080 --realm master --user user --password password
+```
+Create realm
+```shell
+./kcadm.sh create realms -s realm=KytokRealm -s enabled=true
+```
+Create roles
+```shell
+./kcadm.sh create roles -r KytokRealm -s name=customer
+```
+Create users
+```shell
+./kcadm.sh create users -r KytokRealm -s username=sasha -s firstName=Sasha -s lastName=Krav -s enabled=true
+```
+Add roles
+```shell
+./kcadm.sh add-roles -r KytokRealm --uusername sasha --rolename employee --rolename customer
+```
+Set password
+```shell
+./kcadm.sh set-password -r KytokRealm --username sasha --new-password password
+```
+Create Client
+```shell
+./kcadm.sh create clients -r KytokRealm -s clientId=edge-service -s publicClient=false -s secret=kytok-keycloak-secret -s 'redirectUris=["http://localhost:9000","http://localhost:9000/login/oauth2/code/*"]'
+```
